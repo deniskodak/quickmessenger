@@ -1,5 +1,5 @@
 require("dotenv").config();
-const fetch = require("node-fetch");
+const axios = require("axios");
 
 const url =
   "https://shared-api.forefront.link/organization/G1Yk5qgNGeTb/gpt-j-6b-vanilla/completions/2JrDQ5BhJAm6";
@@ -21,11 +21,7 @@ const sendMessage = async (req, res, _) => {
   const { prompt } = req.body;
   const updatedBody = { ...body, prompt };
   try {
-    const data = await fetch(url, {
-      method: "Post",
-      headers,
-      body: JSON.stringify(updatedBody),
-    });
+    const data = await axios.post(url, updatedBody, { headers });
     return res.status(200).json({
       data,
     });
