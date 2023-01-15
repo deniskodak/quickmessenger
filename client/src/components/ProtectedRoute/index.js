@@ -5,7 +5,7 @@ import { user } from '../../store/atom'
 const ProtectedRoute = ({ isPrivate, redirectPath = '/login', children }) => {
 	const isUser = useRecoilValue(user)
 	const isAllowed = isPrivate ? !isUser : isUser
-	
+	console.log(isUser, 'isUser')
 	if (isAllowed) {
 		return <Navigate to={redirectPath} replace />
 	}

@@ -1,6 +1,7 @@
 import React from 'react'
 import Header from './Header'
 import MessagesList from './MessagesList'
+import MessageCreator from './MessageCreator'
 
 import { allChannels, selectedChanel } from '../../store/atom'
 import { useRecoilValue, useRecoilState } from 'recoil'
@@ -25,6 +26,7 @@ const RightSidebar = ({ isRightShown, breakpoint }) => {
 				/>
 			)}
 			{chanel && <MessagesList />}
+			{chanel && <MessageCreator id={chanel.id}/>}
 		</div>
 	)
 }

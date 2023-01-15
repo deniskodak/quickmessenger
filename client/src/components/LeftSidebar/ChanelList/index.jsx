@@ -9,11 +9,11 @@ import { useEffect } from 'react';
 
 const mockedData = [
     {
-        name: 'testName',
-        lastMessage: 'test last message',
+        name: 'ChatBot',
+        lastMessage: '',
         image: null,
         lastMessageTime: dayjs().format('HH:mm a'),
-        id: 'testid1',
+        id: 'openAiBot',
         background: 'linear-gradient(360deg, rgb(7, 178, 46), rgb(216, 226, 240))'
     },
     {

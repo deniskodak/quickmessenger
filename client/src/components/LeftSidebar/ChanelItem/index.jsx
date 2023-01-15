@@ -1,10 +1,9 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Avatar from '../../Common/Avatar'
 import {
     useRecoilState,
   } from 'recoil';
 import {selectedChanel} from '../../../store/atom'
-import useWindowDimensions from '../../../utils/windowSize';
 
 const OVERFLOW_CLASSES = 'text-ellipsis whitespace-nowrap overflow-hidden'
 

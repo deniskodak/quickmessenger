@@ -73,6 +73,7 @@ const Input = ({
 					onFocus={() => setIsFocused(true)}
 					onBlur={() => setIsFocused(false)}
 					placeholder={placeholder}
+					autoComplete={type === 'password' ? 'on' : 'off'}
 				/>
 			</label>
 		</>
