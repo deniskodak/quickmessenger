@@ -1,0 +1,23 @@
+.gradient_wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    background: linear-gradient(48deg, #07598554, #ffffff, #38bdf875);
+    background-size: 400% 400%;
+    animation: gradient-bg 20s ease infinite;
+}
+
+@keyframes gradient-bg {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}

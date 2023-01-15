@@ -1,0 +1,21 @@
+.with-arrow {
+    position: relative;
+    &::before {
+        background-color: inherit;
+        bottom: 0;
+        content: '';
+        display: block;
+        position: absolute;
+        left: -0.5rem;
+        border-top-left-radius: 100%;
+        width: 2rem;
+        height: 1rem;
+    }
+
+    &.author::before {
+        left: unset; 
+        right: -0.5rem;
+        border-top-left-radius: 0;
+        border-top-right-radius: 100%;
+    }
+}

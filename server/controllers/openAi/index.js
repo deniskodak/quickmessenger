@@ -1,0 +1,37 @@
+require("dotenv").config();
+const fetch = require("node-fetch");
+
+const url =
+  "https://shared-api.forefront.link/organization/G1Yk5qgNGeTb/gpt-j-6b-vanilla/completions/2JrDQ5BhJAm6";
+
+const body = {
+  max_tokens: 64,
+  top_p: 1,
+  top_k: 40,
+  temperature: 0.8,
+  repetition_penalty: 1,
+};
+
+const headers = {
+  Authorization: `Bearer ${process.env.MODEL_API}`,
+  "Content-Type": "application/json",
+};
+
+const sendMessage = async (req, res, _) => {
+  const { prompt } = req.body;
+  const updatedBody = { ...body, prompt };
+  try {
+    const data = await fetch(url, {
+      method: "Post",
+      headers,
+      body: JSON.stringify(updatedBody),
+    });
+    return res.status(200).json({
+      data,
+    });
+  } catch (error) {
+    return res.status(500).json({ error });
+  }
+};
+
+module.exports = sendMessage;
