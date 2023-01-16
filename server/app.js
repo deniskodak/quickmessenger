@@ -14,11 +14,11 @@ app.use(express.static("public"));
 
 const router = require("./routes/index");
 
+app.use("/v1/openAi", router);
+
 app.use((_, res) => {
   res.status(404).json({ status: "error", code: 404, message: "Not found" });
 });
-
-app.use("/v1/openAi", router);
 
 app.use((error, _, res, __) => {
   const { status = 500, message = "Server error" } = error;
