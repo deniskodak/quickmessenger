@@ -9,13 +9,20 @@ const MessageCreator = ({ id }) => {
 	}
 
 	const handleSubmit = async () => {
-		if (id === 'openAiBot') {
-			const response = await sendBotMessage({
-				userId: id,
-				params: { prompt: message },
-			})
-            console.log(response, 'response_______________')
-		}
+		try {
+
+            if (id === 'openAiBot') {
+                const response = await sendBotMessage({
+                    userId: id,
+                    params: { prompt: message },
+                })
+                console.log(response, 'response_______________')
+            }
+            setMessage('')
+        } catch(error) {
+            console.log(error)
+        } 
+
 	}
 
 	return (

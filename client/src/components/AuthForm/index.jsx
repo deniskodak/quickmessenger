@@ -71,8 +71,8 @@ const AuthForm = ({ isRegistration, currentBreakpoint }) => {
 		setIsLoading(true)
 
 		try {
-			const user = await authMethod(email.value, password.value)
-			setUserData(user)
+			const data = await authMethod(email.value, password.value)
+			setUserData(data.user)
 		} catch (error) {
 		} finally {
 			setIsLoading(false)
@@ -82,8 +82,9 @@ const AuthForm = ({ isRegistration, currentBreakpoint }) => {
 	const handleGoogleBtnClick = async () => {
 		setIsLoading(true)
 		try {
-			const user = await registrationWithGoogle(currentBreakpoint)
-			setUserData(user)
+			const data = await registrationWithGoogle(currentBreakpoint)
+
+			setUserData(data.user)
 		} catch (error) {
 		} finally {
 			setIsLoading(false)
