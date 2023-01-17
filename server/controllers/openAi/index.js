@@ -18,7 +18,7 @@ const headers = {
 
 const sendMessage = async (req, res, _) => {
   const { prompt } = req.body;
-  const updatedBody = { ...body, prompt };
+  const updatedBody = JSON.stringify({ ...body, text: prompt });
   try {
     const data = await axios.post(url, updatedBody, { headers });
     return res.status(200).json({
