@@ -2,8 +2,7 @@ require("dotenv").config();
 const axios = require("axios");
 
 const url =
-  "https://shared-api.forefront.link/organization/G1Yk5qgNGeTb/gpt-j-6b-vanilla/completions/2JrDQ5BhJAm6";
-
+  "https://shared-api.forefront.link/organization/lKr91mPNhpSE/gpt-j-6b-vanilla/completions/2JrDQ5BhJAm6";
 const body = {
   max_tokens: 64,
   top_p: 1,
