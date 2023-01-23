@@ -1,5 +1,8 @@
 import { atom } from 'recoil'
 import { selectedChanelKey, allChannelsKeys, userKey } from './keys'
+import { recoilPersist } from 'recoil-persist'
+
+const { persistAtom } = recoilPersist()
 
 export const selectedChanel = atom({
 	key: selectedChanelKey,
@@ -14,4 +17,5 @@ export const allChannels = atom({
 export const user = atom({
 	key: userKey,
 	default: null,
+	effects_UNSTABLE: [persistAtom],
 })

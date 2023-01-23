@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const url = 'https://quik-messenger-api.onrender.com/api/v1/openAi/message'
+const url = 'https://quick-messenger-api.onrender.com/v1/openAi/message'
 
 const sendBotMessage = async ({ userId, params }) => {
 	try {

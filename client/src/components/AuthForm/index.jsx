@@ -69,9 +69,9 @@ const AuthForm = ({ isRegistration, currentBreakpoint }) => {
 			: loginWithEmailAndPassword
 
 		setIsLoading(true)
-
 		try {
 			const data = await authMethod(email.value, password.value)
+			console.log(data.user)
 			setUserData(data.user)
 		} catch (error) {
 		} finally {
@@ -83,7 +83,7 @@ const AuthForm = ({ isRegistration, currentBreakpoint }) => {
 		setIsLoading(true)
 		try {
 			const data = await registrationWithGoogle(currentBreakpoint)
-
+			console.log(data.user)
 			setUserData(data.user)
 		} catch (error) {
 		} finally {
@@ -98,7 +98,6 @@ const AuthForm = ({ isRegistration, currentBreakpoint }) => {
 	const handleConfirmChange = ({ value }) => {
 		const isPasswordEqual = comparePasswords(value)
 		const confirmStatus = isPasswordEqual ? success : error
-		console.log(confirmStatus, 'confirm')
 		setConfirmPassword({ value, status: confirmStatus })
 	}
 

@@ -17,6 +17,7 @@ const Input = ({
 	onChange,
 	placeholder = 'Search',
 	additionalWindClasses = '',
+	additionalLabelClasses= "",
 	label,
 	status = initial,
 }) => {
@@ -58,7 +59,7 @@ const Input = ({
 
 	return (
 		<>
-			<label>
+			<label className={additionalLabelClasses}>
 				{label ? (
 					<span
 						className={`block mb-1 font-semibold cursor-pointer ${labelFocusedClasses} ${transitionClasses}`}>

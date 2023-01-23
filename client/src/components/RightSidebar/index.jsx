@@ -17,7 +17,7 @@ const RightSidebar = ({ isRightShown, breakpoint }) => {
 	const hiddenClasses = isRightShown ? 'w-screen' : 'w-0'
 
 	return (
-		<div class={`rightSidebar sm:w-3/5 lg:w-3/4 bg-sky-300 ${hiddenClasses}`}>
+		<div class={`rightSidebar relative px-6 md:px-8 lg:px-12 pt-14 pb-24 sm:w-3/5 lg:w-3/4 bg-sky-300 ${hiddenClasses}`}>
 			{chanel && (
 				<Header
 					chanel={chanel}

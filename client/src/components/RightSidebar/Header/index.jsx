@@ -6,11 +6,11 @@ const Header = ({ chanel, setChanel, withBackIcon }) => {
 	const handleResetSelectedChanel = () => setChanel(null)
 
 	return (
-		<div className="flex bg-white border py-2 px-4">
+		<div className="absolute left-0 top-0 right-0 flex bg-white border py-2 px-4">
 			{withBackIcon && <BiArrowBack onClick={handleResetSelectedChanel} />}
 			<Avatar
 				large={false}
-				name={chanel.name}
+				name={chanel.title}
 				img={chanel.img}
 				background={chanel.background}
 			/>
